@@ -47,7 +47,7 @@ class Form extends Component {
             name="firstName"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="First Name"
+            placeholder="Search"
             autoComplete='off' />
         </form>
       </div>
