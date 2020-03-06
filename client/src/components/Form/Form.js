@@ -1,53 +1,58 @@
-import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import TextField from "@material-ui/core/TextField";
+// import "./style.css";
 
-
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     '& > *': {
-//       margin: theme.spacing(1),
-//       width: 200,
-//     },
-//   },
-// }));
-
-// export default function BasicTextFields() {
-//   const classes = useStyles();
 class Form extends Component {
   // Setting the component's initial state
   state = {
-    data: ''
+    firstName: "",
+    // lastName: "",
+    // password: ""
   };
+
   handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
 
+    if (name === "password") {
+      value = value.substring(0, 15);
+    }
+    // Updating the input's state
     this.setState({
       [name]: value
-    })
-  }
+    });
+  };
+
   handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
+
     this.setState({
-      data: ''
-    })
-    console.log('')
+      firstName: "",
+      // lastName: "",
+      // password: ""
+    });
+  };
 
-  }
   render() {
-
+    // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
-        <form noValidate autoComplete="off">
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={this.handleInputChange} value={this.state.data} 
-          />
+        <p>
+          Search: {this.state.firstName} {this.state.lastName}
+        </p>
+        <form className="form">
+          <TextField id='outlined-basic' label='Input' variant='outlined' value={this.state.firstName}
+            name="firstName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="First Name"
+            autoComplete='off' />
         </form>
-        <Button variant="contained" color="primary" onClick={this.handleFormSubmit}>Submit</Button>
       </div>
     );
   }
 }
-export default Form;
 
+export default Form;
