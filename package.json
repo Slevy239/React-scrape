@@ -17,6 +17,7 @@
   "author": "Dominick Maleszewski, Sam Levy, Jack Ryan, Phil Swartz",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
     "@react-pdf/renderer": "^1.6.8",
     "axios": "^0.19.1",
     "bcrypt": "^3.0.6",

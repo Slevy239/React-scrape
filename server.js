@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3001;
 const bodyParser = require("body-parser");
 const path = require("path");
 
-console.log("push!")
 const axios = require("axios");
 const cheerio = require("cheerio");
 const db = require("./models");
@@ -66,7 +65,6 @@ app.get("/", function (req, res) {
       res.send("Scrape Complete")
   });
 });
-
 
 
 
