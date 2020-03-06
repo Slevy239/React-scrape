@@ -1,25 +1,20 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-// import { Form } from 'react-bootstrap/lib/Navbar';
+import React, { Component } from 'react'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-}));
 
-export default function BasicTextFields() {
-  const classes = useStyles();
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-  return (
-    <form className={classes.root} noValidate autoComplete="off">
-      {/* <TextField id="standard-basic" label="Standard" />
-      <TextField id="filled-basic" label="Filled" variant="filled" /> */}
-      <TextField id="outlined-basic" label="Gimme that shit" variant="outlined" />
-    </form>
-  );
+    }
+  }
+  render() {
+    return (
+      <div>
+<textarea></textarea>
+<button></button>
+      </div>
+    )
+  }
 }
+export default Form
