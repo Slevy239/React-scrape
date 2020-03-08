@@ -21,7 +21,7 @@ class Home extends Component {
 
     displayRes = data => {
         this.setState({ results: data })
-        console.log(data[1].matchId)
+        console.log(data[0].home_team)
     }
     searchApi = () => {
         // const data = '2020-03-08'
@@ -33,24 +33,12 @@ class Home extends Component {
             .then(res => {
                 console.log(res.data.data)
                 this.displayRes(res.data.data);
-                this.postToDB(res.data.data);
+                // this.postToDB(this.props);
             })
             .catch(err => console.log(err));
     };
-    postToDB = (res) => {
 
-        var dbBook = {
-            title: res.title,
-            authors: res.authors,
-            synopsis: res.synopsis,
-            thumbnail: res.thumbnail,
-            link: res.link
-        }
-
-        axios.post("/api/books", dbBook)
-            .then(() => alert("added to db"))
-            .catch(err => console.log(err))
-    }
+   
 
     render() {
         return (
