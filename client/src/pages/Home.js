@@ -17,7 +17,7 @@ class Home extends Component {
         results: []
     }
 
-   
+
 
     displayRes = data => {
         this.setState({ results: data })
@@ -33,9 +33,24 @@ class Home extends Component {
             .then(res => {
                 console.log(res.data.data)
                 this.displayRes(res.data.data);
+                this.postToDB(res.data.data);
             })
             .catch(err => console.log(err));
     };
+    postToDB = (res) => {
+
+        var dbBook = {
+            title: res.title,
+            authors: res.authors,
+            synopsis: res.synopsis,
+            thumbnail: res.thumbnail,
+            link: res.link
+        }
+
+        axios.post("/api/books", dbBook)
+            .then(() => alert("added to db"))
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
@@ -73,11 +88,11 @@ class Home extends Component {
                                                 // matchTime={result.matchTime}
                                                 />
 
-                                                <AddBtn 
-                                                teams={result.teams}
-                                                home_team={result.home_team}
-                                                commence_time={result.commence_time}
-                                                sites={result.sites}
+                                                <AddBtn
+                                                    teams={result.teams}
+                                                    home_team={result.home_team}
+                                                    commence_time={result.commence_time}
+                                                    sites={result.sites}
                                                 />
                                             </div>
                                         )
