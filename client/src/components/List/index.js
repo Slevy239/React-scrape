@@ -1,5 +1,4 @@
 import React from "react";
-import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
 
 // BookList renders a bootstrap list item
@@ -18,12 +17,9 @@ export function List({children}) {
       <li>
         <Container>
           <Row>
-            <Col size="xs-4 sm-2">
-              <Thumbnail src={this.props.thumbnail} />
-            </Col>
             <Col size="xs-8 sm-9">
-              <h3>{this.props.title}<span><h5>{this.props.authors}</h5></span></h3>
-              <p>
+              <h3>{this.props.homeTeam} vs. {this.props.awayTeam}</h3>
+              {/* <p>
                 {this.props.synopsis}
               </p>
               <a
@@ -32,7 +28,7 @@ export function List({children}) {
                 rel="noopener noreferrer"
               >
                 Go to book!
-              </a>
+              </a> */}
             </Col>
           </Row>
         </Container>
