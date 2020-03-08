@@ -16,13 +16,14 @@ class Home extends Component {
         results: []
     }
 
-    postToDB = (result) => {
+    postToDB = (props) => {
         var dbResult = {
-            teams: result.teams,
-            commence_time: result.commence_time,
-            home_time: result.home_time,
-            sites: result.sites,
+            teams: props.teams,
+            commence_time: props.commence_time,
+            home_team: props.home_team,
+            sites: props.sites,
         }
+        console.log(dbResult)
 
         axios.post("/api/results", dbResult)
             .then(() => alert("added To Db"))
@@ -34,7 +35,7 @@ class Home extends Component {
         console.log(data[1].matchId)
     }
     searchApi = () => {
-        const data = '2020-03-08'
+        // const data = '2020-03-08'
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const key = '3565acccc37b8d4e713b04a23057ba44'
         let url = proxyurl + "https://api.the-odds-api.com/v3/odds?apiKey=" + key + "&sport=soccer_epl&region=uk";
