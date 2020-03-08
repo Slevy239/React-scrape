@@ -1,38 +1,40 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
+import axios from "axios"
 // import "./style.css";
 
 class Form extends Component {
   // Setting the component's initial state
   state = {
-    firstName: "",
-    // lastName: "",
-    // password: ""
+    searchRes: [],
+    query: "",
+    scores: []
   };
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
+  displayRes = data => {
+    this.setState({ sport: data.items })
+  }
+  searchApi = () => {
+    const key = 'eJ4XG5aprdZx7ViJ'
+    // var req = unirest("GET", "http://api.isportsapi.com/sport/basketball/schedule?api_key=" + key + "&leagueId=111")
 
-    if (name === "password") {
-      value = value.substring(0, 15);
-    }
-    // Updating the input's state
+    let url = "http://api.isportsapi.com/sport/basketball/schedule?api_key=" + key + "&leagueId=111";
+    axios
+      .get(url)
+      .then(res => {
+        console.log(res);
+        this.displayRes(res.data);
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleInput = event => {
+    const { name, value } = event.target;
+
     this.setState({
       [name]: value
     });
-  };
-
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-
-    this.setState({
-      firstName: "",
-      // lastName: "",
-      // password: ""
-    });
+    //console.log("Query", this.state.query);
   };
 
   render() {
@@ -40,15 +42,16 @@ class Form extends Component {
     return (
       <div>
         <p>
-          Search: {this.state.firstName} {this.state.lastName}
+          Search: {this.state.firstName}
         </p>
         <form className="form">
-          <TextField id='outlined-basic' label='Input' variant='outlined' value={this.state.firstName}
+          <TextField id='outlined-basic' label='Input' variant='outlined' 
             name="firstName"
-            onChange={this.handleInputChange}
+            onChange={this.handleInput}
             type="text"
             placeholder="Search"
             autoComplete='off' />
+          <button type='submit' className='btn btn-danger' onClick={this.searchApi}>Search</button>
         </form>
       </div>
     );
