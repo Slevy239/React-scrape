@@ -19,7 +19,7 @@ export class ListItem extends React.Component {
           <div className='card' id={this.props.id}>
 
             <h3 className='card-title'>{this.props.homeName} vs. {this.props.awayName}</h3>
-            <h4 className='card-title'>Sup</h4>
+            <h4 className='card-title'>Start Time: {this.props.matchTime}</h4>
 
           </div>
         </Container>

@@ -22,10 +22,6 @@ class Home extends Component {
     searchApi = () => {
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const key = 'eJ4XG5aprdZx7ViJ'
-        // var req = unirest("GET", "http://api.isportsapi.com/sport/basketball/schedule?api_key=" + key + "&leagueId=111")
-
-        // https://api.the-odds-api.com/v3/odds/?sport=UPCOMING&region=us&mkt=h2h&apiKey=3565acccc37b8d4e713b04a23057ba44
-
         let url = proxyurl + "http://api.isportsapi.com/sport/basketball/livescores?api_key=" + key + "&leagueId=111";
         axios
             .get(url)
@@ -36,24 +32,24 @@ class Home extends Component {
             .catch(err => console.log(err));
     };
 
-    handleInput = event => {
-        const { name, value } = event.target;
+    // handleInput = event => {
+    //     const { name, value } = event.target;
 
-        this.setState({
-            [name]: value
-        });
-    };
-    postToDb = (result) => {
-        let dbResult = {
-            home: result.homeTeam,
-            homeScore: result.homeScore,
-            away: result.awayTeam,
-            awayScore: result.awayScore
-        }
-        axios.post('/api/results', dbResult)
-            .then(() => alert("added scores to db"))
-            .catch(err => console.log(err))
-    }
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
+    // postToDb = (result) => {
+    //     let dbResult = {
+    //         home: result.homeTeam,
+    //         homeScore: result.homeScore,
+    //         away: result.awayTeam,
+    //         awayScore: result.awayScore
+    //     }
+    //     axios.post('/api/results', dbResult)
+    //         .then(() => alert("added scores to db"))
+    //         .catch(err => console.log(err))
+    // }
 
     render() {
         return (
@@ -76,9 +72,12 @@ class Home extends Component {
                                 <List>
                                     {this.state.results.map(result => {
                                         return (
-                                            <div id='item' key={result.matchId}>
+                                            <div id='item' key={result.matchId} className={result.homeName}>
                                                 <ListItem
                                                     key={result.matchId}
+                                                    homeName={result.homeName}
+                                                    awayName={result.awayName}
+                                                    matchTime={result.matchTime}
                                                 />
                                             </div>
                                         )
