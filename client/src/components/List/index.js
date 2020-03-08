@@ -18,7 +18,7 @@ export function List({children}) {
         <Container>
           <Row>
             <Col size="xs-8 sm-9">
-              <h3>{this.props.homeTeam} vs. {this.props.awayTeam}</h3>
+              <h3>{this.props.homeName} vs. {this.props.awayName}</h3>
               {/* <p>
                 {this.props.synopsis}
               </p>

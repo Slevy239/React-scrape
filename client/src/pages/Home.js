@@ -16,19 +16,22 @@ class Home extends Component {
         results: []
     }
     displayRes = data => {
-        this.setState({ results: data.items })
+        this.setState({ results: data })
+        console.log(data[1].matchId)
     }
     searchApi = () => {
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const key = 'eJ4XG5aprdZx7ViJ'
         // var req = unirest("GET", "http://api.isportsapi.com/sport/basketball/schedule?api_key=" + key + "&leagueId=111")
 
-        let url = proxyurl+"http://api.isportsapi.com/sport/basketball/schedule?api_key=" + key + "&leagueId=111";
+        // https://api.the-odds-api.com/v3/odds/?sport=UPCOMING&region=us&mkt=h2h&apiKey=3565acccc37b8d4e713b04a23057ba44
+
+        let url = proxyurl + "http://api.isportsapi.com/sport/basketball/livescores?api_key=" + key + "&leagueId=111";
         axios
             .get(url)
             .then(res => {
-                this.displayRes(res.data);
-                console.log(res.data)
+                console.log(res.data.data)
+                this.displayRes(res.data.data);
             })
             .catch(err => console.log(err));
     };
@@ -40,13 +43,23 @@ class Home extends Component {
             [name]: value
         });
     };
+    postToDb = (result) => {
+        let dbResult = {
+            home: result.homeTeam,
+            homeScore: result.homeScore,
+            away: result.awayTeam,
+            awayScore: result.awayScore
+        }
+        axios.post('/api/results', dbResult)
+            .then(() => alert("added scores to db"))
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
             <div>
                 <Jumbo />
-                {/* <Form />
-                <List /> */}
+             
                 <Row>
                     <Col size='md-12'>
                         <div>
@@ -59,14 +72,13 @@ class Home extends Component {
                                     </button>
                                 </div>
                             </div>
-
                             {(this.state.results && this.state.results.length > 0) ?
                                 <List>
                                     {this.state.results.map(result => {
                                         return (
-                                            <div id='item'>
+                                            <div id='item' key={result.matchId}>
                                                 <ListItem
-                                                    key={result.id}
+                                                    key={result.matchId}
                                                 />
                                             </div>
                                         )
