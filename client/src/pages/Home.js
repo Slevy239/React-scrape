@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Jumbo from '../components/Jumbo/Jumbo'
-import Form from '../components/Form/Form'
+// import Form from '../components/Form/Form'
 import { List, ListItem } from "../components/List";
 import axios from 'axios'
 import EmptyList from '../components/EmptyList';
@@ -28,7 +28,7 @@ class Home extends Component {
             .get(url)
             .then(res => {
                 this.displayRes(res.data);
-                // console.log('res');
+                console.log(res.data)
             })
             .catch(err => console.log(err));
     };
