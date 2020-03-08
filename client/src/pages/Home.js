@@ -20,9 +20,10 @@ class Home extends Component {
         console.log(data[1].matchId)
     }
     searchApi = () => {
+        const data = '2020-03-08'
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const key = 'eJ4XG5aprdZx7ViJ'
-        let url = proxyurl + "http://api.isportsapi.com/sport/basketball/livescores?api_key=" + key + "&leagueId=111";
+        const key = '3565acccc37b8d4e713b04a23057ba44'
+        let url = proxyurl + "https://api.the-odds-api.com/v3/odds?apiKey=" + key + "&sport=soccer_epl&region=uk";
         axios
             .get(url)
             .then(res => {
@@ -55,7 +56,7 @@ class Home extends Component {
         return (
             <div>
                 <Jumbo />
-             
+
                 <Row>
                     <Col size='md-12'>
                         <div>
@@ -72,12 +73,15 @@ class Home extends Component {
                                 <List>
                                     {this.state.results.map(result => {
                                         return (
-                                            <div id='item' key={result.matchId} className={result.homeName}>
+                                            <div id='item' key={result.sites.last_update} className={result.key}>
                                                 <ListItem
-                                                    key={result.matchId}
-                                                    homeName={result.homeName}
-                                                    awayName={result.awayName}
-                                                    matchTime={result.matchTime}
+                                                    key={result.sites.last_update}
+                                                    teams={result.teams}
+                                                    home_team={result.home_team}
+                                                    commence_time={result.commence_time}
+                                                    sites={result.sites}
+                                                // awayName={result.awayName}
+                                                // matchTime={result.matchTime}
                                                 />
                                             </div>
                                         )
