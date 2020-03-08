@@ -15,6 +15,20 @@ class Home extends Component {
         query: "",
         results: []
     }
+
+    postToDB = (result) => {
+        var dbResult = {
+            teams: result.teams,
+            commence_time: result.commence_time,
+            home_time: result.home_time,
+            sites: result.sites,
+        }
+
+        axios.post("/api/results", dbResult)
+            .then(() => alert("added To Db"))
+            .catch(err => console.log(err))
+    }
+
     displayRes = data => {
         this.setState({ results: data })
         console.log(data[1].matchId)
@@ -66,6 +80,10 @@ class Home extends Component {
 
                                     <button type='submit' className='btn btn-danger' onClick={this.searchApi}>
                                         Search For Scores
+                                    </button>
+                                    <button type='submit' className='btn btn-danger' onClick={() => { this.postToDB(this.props) }
+                                    }>
+                                        Save Scores
                                     </button>
                                 </div>
                             </div>
