@@ -10,43 +10,154 @@ mongoose.connect(
 
 const bookSeed = [
   {
-    "matchId": "29042634",
-    "leagueId": "111",
-    "leagueName": "NBA",
-    "quarterCount": 4,
-    "matchTime": 1573862400,
-    "status": -1,
-    "quarterRemainTime": "",
-    "homeId": "6",
-    "homeName": "Orlando Magic",
-    "homeRank": 0,
-    "awayId": "18",
-    "awayName": "San Antonio Spurs",
-    "awayRank": 0,
-    "homeScore": 111,
-    "awayScore": 109,
-    "homeFirstQuarterScore": 24,
-    "awayFirstQuarterScore": 31,
-    "homeSecondQuarterScore": 23,
-    "awaySecondQuarterScore": 25,
-    "homeThirdQuarterScore": 32,
-    "awayThirdQuarterScore": 26,
-    "homeFourthQuarterScore": 32,
-    "awayFourthQuarterScore": 27,
-    "overTimeCount": 0,
-    "homeFirstOverTimeScore": 0,
-    "awayFirstOverTimeScore": 0,
-    "homeSecondOverTimeScore": 0,
-    "awaySecondOverTimeScore": 0,
-    "homeThirdOverTimeScore": 0,
-    "awayThirdOverTimeScore": 0,
-    "leagueSeason": "19-20",
-    "matchType": 1,
-    "hasStats": true,
-    "explain": "[Magic][ORL 110-106] Vucevic Free Throw 2 of 2 (10 PTS)",
-    "roundType": "",
-    "group": "",
-    "neutral": false
+    "sport_key": "soccer_epl",
+    "sport_nice": "EPL",
+    "teams": [
+      "Leicester City",
+      "Watford"
+    ],
+    "commence_time": 1584189000,
+    "home_team": "Watford",
+    "sites": [
+      {
+        "site_key": "skybet",
+        "site_nice": "Sky Bet",
+        "last_update": 1583699486,
+        "odds": {
+          "h2h": [
+            2.3,
+            2.9,
+            3.5
+          ]
+        }
+      },
+      {
+        "site_key": "onexbet",
+        "site_nice": "1xBet",
+        "last_update": 1583699516,
+        "odds": {
+          "h2h": [
+            2.4,
+            3.05,
+            3.68
+          ]
+        }
+      },
+      {
+        "site_key": "paddypower",
+        "site_nice": "Paddy Power",
+        "last_update": 1583699475,
+        "odds": {
+          "h2h": [
+            2.3,
+            2.88,
+            3.4
+          ]
+        }
+      },
+      {
+        "site_key": "betvictor",
+        "site_nice": "Bet Victor",
+        "last_update": 1583699147,
+        "odds": {
+          "h2h": [
+            2.38,
+            3,
+            3.4
+          ]
+        }
+      },
+      {
+        "site_key": "marathonbet",
+        "site_nice": "Marathon Bet",
+        "last_update": 1583699516,
+        "odds": {
+          "h2h": [
+            2.38,
+            3.02,
+            3.65
+          ]
+        }
+      },
+      {
+        "site_key": "unibet",
+        "site_nice": "Unibet",
+        "last_update": 1583699474,
+        "odds": {
+          "h2h": [
+            2.3,
+            3,
+            3.55
+          ]
+        }
+      },
+      {
+        "site_key": "sport888",
+        "site_nice": "888sport",
+        "last_update": 1583699476,
+        "odds": {
+          "h2h": [
+            2.3,
+            3,
+            3.55
+          ]
+        }
+      },
+      {
+        "site_key": "betfair",
+        "site_nice": "Betfair",
+        "last_update": 1583699474,
+        "odds": {
+          "h2h": [
+            2.42,
+            3,
+            3.6
+          ],
+          "h2h_lay": [
+            2.54,
+            3.2,
+            3.65
+          ]
+        }
+      },
+      {
+        "site_key": "williamhill",
+        "site_nice": "William Hill",
+        "last_update": 1583699533,
+        "odds": {
+          "h2h": [
+            2.38,
+            2.9,
+            3.5
+          ]
+        }
+      },
+      {
+        "site_key": "ladbrokes",
+        "site_nice": "Ladbrokes",
+        "last_update": 1583699517,
+        "odds": {
+          "h2h": [
+            2.35,
+            2.9,
+            3.4
+          ]
+        }
+      },
+      {
+        "site_key": "betfred",
+        "site_nice": "Betfred",
+        "last_update": 1583699146,
+        "odds": {
+          "h2h": [
+            2.3,
+            2.9,
+            3.5
+          ]
+        }
+      }
+    ],
+    "sites_count": 11
   },
 ];
 

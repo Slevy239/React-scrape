@@ -8,19 +8,19 @@ import axios from "axios";
 
 class AddBtn extends React.Component{
  
-    postToDB = (book) => {
-        var dbBook = {
-          title: book.title,
-          authors: book.authors,
-          synopsis: book.synopsis,
-          thumbnail: book.thumbnail,
-          link: book.link
-        }
-    
-        axios.post("/api/books", dbBook)
-        .then( () => alert(`You added ${book.title} to the bookshelf`))
+  postToDB = (result) => {
+    var dbResult = {
+        teams: result.teams,
+        commence_time: result.commence_time,
+        home_team: result.home_team,
+        sites: result.sites,
+    }
+    console.log(dbResult)
+
+    axios.post("/api/results", dbResult)
+        .then(() => alert("added To Db"))
         .catch(err => console.log(err))
-      }
+}
 
     render() {
         return (
@@ -28,7 +28,7 @@ class AddBtn extends React.Component{
           <Button type="primary" onClick={() => 
             {this.postToDB(this.props)}
             }>
-            Save Book
+            Save To Database
         </Button>
         </div>
         );

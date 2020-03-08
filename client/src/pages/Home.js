@@ -5,6 +5,7 @@ import { List, ListItem } from "../components/List";
 import axios from 'axios'
 import EmptyList from '../components/EmptyList';
 import { Row, Col } from "../components/Grid";
+import AddBtn from '../components/AddBtn';
 
 
 
@@ -16,19 +17,7 @@ class Home extends Component {
         results: []
     }
 
-    postToDB = (props) => {
-        var dbResult = {
-            teams: props.teams,
-            commence_time: props.commence_time,
-            home_team: props.home_team,
-            sites: props.sites,
-        }
-        console.log(dbResult)
-
-        axios.post("/api/results", dbResult)
-            .then(() => alert("added To Db"))
-            .catch(err => console.log(err))
-    }
+   
 
     displayRes = data => {
         this.setState({ results: data })
@@ -47,25 +36,6 @@ class Home extends Component {
             })
             .catch(err => console.log(err));
     };
-
-    // handleInput = event => {
-    //     const { name, value } = event.target;
-
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // };
-    // postToDb = (result) => {
-    //     let dbResult = {
-    //         home: result.homeTeam,
-    //         homeScore: result.homeScore,
-    //         away: result.awayTeam,
-    //         awayScore: result.awayScore
-    //     }
-    //     axios.post('/api/results', dbResult)
-    //         .then(() => alert("added scores to db"))
-    //         .catch(err => console.log(err))
-    // }
 
     render() {
         return (
@@ -101,6 +71,13 @@ class Home extends Component {
                                                     sites={result.sites}
                                                 // awayName={result.awayName}
                                                 // matchTime={result.matchTime}
+                                                />
+
+                                                <AddBtn 
+                                                teams={result.teams}
+                                                home_team={result.home_team}
+                                                commence_time={result.commence_time}
+                                                sites={result.sites}
                                                 />
                                             </div>
                                         )
