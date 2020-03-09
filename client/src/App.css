@@ -41,3 +41,8 @@
 ul.list-group {
   list-style: none;
 }
+
+#header{
+  padding-bottom: 3.5%;
+  padding-top: 2.5%;
+}

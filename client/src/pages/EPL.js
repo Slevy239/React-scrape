@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Jumbo from '../components/Jumbo/Jumbo'
+// import Jumbo from '../components/Jumbo/Jumbo'
 // import Form from '../components/Form/Form'
 import { List, ListItem } from "../components/List";
 import axios from 'axios'
@@ -18,7 +18,16 @@ class EPL extends Component {
         results: []
     }
 
-
+    componentDidMount() {
+        this.getResults();
+    }
+    getResults = () => {
+        axios.get('/api/results')
+            .then(res => {
+                this.setState({ savedResults: res.data })
+            })
+            .catch(err => console.log(err))
+    }
 
     displayRes = data => {
         this.setState({ results: data })
@@ -69,7 +78,8 @@ class EPL extends Component {
                                                     sites={result.sites}
                                                 // awayName={result.awayName}
                                                 // matchTime={result.matchTime}
-                                                />
+                                                >
+                                                </ListItem>
 
                                                 <AddBtn
                                                     teams={result.teams}

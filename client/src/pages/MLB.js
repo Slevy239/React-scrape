@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Jumbo from '../components/Jumbo/Jumbo'
+// import Jumbo from '../components/Jumbo/Jumbo'
 // import Form from '../components/Form/Form'
 import { List, ListItem } from "../components/List";
 import axios from 'axios'
@@ -61,6 +61,12 @@ class MLB extends Component {
                                     {this.state.results.map(result => {
                                         return (
                                             <div id='item' key={result.id} className={result.key}>
+                                                <AddBtn
+                                                    teams={result.teams}
+                                                    home_team={result.home_team}
+                                                    commence_time={result.commence_time}
+                                                    sites={result.sites}
+                                                />
                                                 <ListItem
                                                     key={result.id}
                                                     teams={result.teams}
@@ -71,12 +77,6 @@ class MLB extends Component {
                                                 // matchTime={result.matchTime}
                                                 />
 
-                                                <AddBtn
-                                                    teams={result.teams}
-                                                    home_team={result.home_team}
-                                                    commence_time={result.commence_time}
-                                                    sites={result.sites}
-                                                />
                                             </div>
                                         )
                                     })}

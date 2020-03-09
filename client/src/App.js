@@ -1,10 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './pages/EPL'
-import NBA from './pages/NBA'
-import MLB from './pages/MLB'
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Nav from './components/Nav'
 import Tabs from './components/Tabs/Tabs'
 
 function App() {

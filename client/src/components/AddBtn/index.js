@@ -1,10 +1,11 @@
   
 import React from "react";
-import Button from "../Button";
+// import Button from "../Button";
 import axios from "axios";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
+import Button from "@material-ui/core/Button";
 
 class AddBtn extends React.Component{
  
@@ -25,7 +26,7 @@ class AddBtn extends React.Component{
     render() {
         return (
           <div>
-          <Button type="primary" onClick={() => 
+          <Button variant='contained' color='secondary' onClick={() => 
             {this.postToDB(this.props)}
             }>
             Save To Database
