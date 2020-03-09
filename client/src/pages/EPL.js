@@ -35,7 +35,7 @@ class EPL extends Component {
     searchApi = () => {
         // const data = '2020-03-08'
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const key = '3565acccc37b8d4e713b04a23057ba44'
+        const key = process.env.REACT_APP_API_KEY
         let url = proxyurl + "https://api.the-odds-api.com/v3/odds?apiKey=" + key + "&sport=soccer_epl&region=uk";
         axios
             .get(url)
