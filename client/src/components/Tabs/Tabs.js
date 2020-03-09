@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box';
 import EPL from '../../pages/EPL'
 import NBA from '../../pages/NBA'
 import MLB from '../../pages/MLB'
+import Gif from '../../pages/Gif'
 
 
 
@@ -64,6 +65,8 @@ export default function SimpleTabs() {
                     <Tab label="EPL" {...a11yProps(0)} />
                     <Tab label="NBA" {...a11yProps(1)} />
                     <Tab label="MLB" {...a11yProps(2)} />
+                    <Tab label="Gif Search" {...a11yProps(3)} />
+
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
@@ -74,6 +77,9 @@ export default function SimpleTabs() {
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <MLB />
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+                <Gif />
             </TabPanel>
         </div>
     );
