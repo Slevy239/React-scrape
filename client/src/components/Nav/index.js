@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/link';
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Menu';
+import './style.css'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -26,11 +27,11 @@ export default function ButtonAppBar() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Link color="inherit">EPL</Link>
+                    <Link color="inherit" href='/' id='link'>EPL</Link>
                     ||
-                    <Link color="inherit">NBA</Link>
+                    <Link color="inherit" href='/NBA' id='link'>NBA</Link>
                     ||
-                    <Link color="inherit">NHL</Link>
+                    <Link color="inherit" href='/NHL' id='link'>NHL</Link>
 
 
                 </Toolbar>
