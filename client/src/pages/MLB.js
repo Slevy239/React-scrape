@@ -6,9 +6,8 @@ import axios from 'axios'
 import EmptyList from '../components/EmptyList';
 import { Row, Col } from "../components/Grid";
 import AddBtn from '../components/AddBtn';
-
-
-
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
 class MLB extends Component {
     state = {
@@ -50,14 +49,11 @@ class MLB extends Component {
                             {/* <input id='scoreQ' className='form-control form-control-lg' autoComplete='off' type='text' name='query' onChange={this.handleInput} /> */}
                             <div id='submit'>
                                 <div className='col'>
-                                    <h2>MLB odds</h2>
-                                    <button type='submit' className='btn btn-danger' onClick={this.searchApi}>
+                                <Typography variant="h3" component="h2" id='header'>Major League Baseball</Typography>
+                                    <Button type='submit' variant='contained' color='primary' onClick={this.searchApi}>
                                         Search For Games
-                                    </button>
-                                    <button type='submit' className='btn btn-danger' onClick={() => { this.postToDB(this.props) }
-                                    }>
-                                        Save Scores
-                                    </button>
+                                    </Button>
+                                   
                                 </div>
                             </div>
                             {(this.state.results && this.state.results.length > 0) ?

@@ -6,6 +6,8 @@ import axios from 'axios'
 import EmptyList from '../components/EmptyList';
 import { Row, Col } from "../components/Grid";
 import AddBtn from '../components/AddBtn';
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
 
 
@@ -45,18 +47,15 @@ class NBA extends Component {
             <div>
                 <Row>
                     <Col size='md-12'>
-                        <h2>NBA GAMES</h2>
+                    <Typography variant="h3" component="h2" id='header'>National Basketball Association</Typography>
                         <div>
                             {/* <input id='scoreQ' className='form-control form-control-lg' autoComplete='off' type='text' name='query' onChange={this.handleInput} /> */}
                             <div id='submit'>
                                 <div className='col'>
-                                    <button type='submit' className='btn btn-danger' onClick={this.searchApi}>
+                                <Button type='submit' variant='contained' color='primary' onClick={this.searchApi}>
                                         Search For Games
-                                    </button>
-                                    <button type='submit' className='btn btn-danger' onClick={() => { this.postToDB(this.props) }
-                                    }>
-                                        Save Scores
-                                    </button>
+                                    </Button>
+                                  
                                 </div>
                             </div>
                             {(this.state.results && this.state.results.length > 0) ?
