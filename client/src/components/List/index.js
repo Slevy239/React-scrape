@@ -44,7 +44,7 @@ export class ListItem extends React.Component {
               <Typography>{this.props.teams.join(' vs. ')}</Typography>
               <Typography className='card-title'><strong>Start Time:</strong> <Moment fromat='YYYY/MM/DD' unix>{this.props.commence_time}</Moment></Typography>
               <Typography className='card-body'><strong>Home Team:</strong> {this.props.home_team}</Typography>
-              <Typography className='card-body'> <strong>{this.props.sites[1].site_nice}</strong> <span> Away Team Odds: {Math.round((-100) / (this.props.sites[1].odds.h2h[1] - 1))}</span></Typography>
+              <Typography className='card-body'> <strong>{this.props.sites[0].site_nice}</strong> <span> Away Team Odds: {Math.round((-100) / (this.props.sites[0].odds.h2h[1] - 1))}</span></Typography>
               {/* <AddBtn /> */}
             </CardContent>
           </Card>

@@ -8,7 +8,7 @@ import { Row, Col } from "../components/Grid";
 import AddBtn from '../components/AddBtn';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography'
-
+// import PageNum from '../components/PageNum/pages'
 
 class EPL extends Component {
     state = {
@@ -35,7 +35,7 @@ class EPL extends Component {
     searchApi = () => {
         // const data = '2020-03-08'
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const key = process.env.REACT_APP_API_KEY
+        const key = '3565acccc37b8d4e713b04a23057ba44'
         let url = proxyurl + "https://api.the-odds-api.com/v3/odds?apiKey=" + key + "&sport=soccer_epl&region=uk";
         axios
             .get(url)
@@ -86,6 +86,7 @@ class EPL extends Component {
                                                     commence_time={result.commence_time}
                                                     sites={result.sites}
                                                 />
+
                                             </div>
                                         )
                                     })}
