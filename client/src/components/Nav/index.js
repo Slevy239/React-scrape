@@ -31,7 +31,7 @@ export default function ButtonAppBar() {
                     ||
                     <Link color="inherit" href='/NBA' id='link'>NBA</Link>
                     ||
-                    <Link color="inherit" href='/NHL' id='link'>NHL</Link>
+                    <Link color="inherit" href='/MLB' id='link'>MLB</Link>
 
 
                 </Toolbar>

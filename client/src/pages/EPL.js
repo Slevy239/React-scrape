@@ -10,7 +10,7 @@ import AddBtn from '../components/AddBtn';
 
 
 
-class NBA extends Component {
+class EPL extends Component {
     state = {
         searchRes: [],
         query: "",
@@ -24,10 +24,10 @@ class NBA extends Component {
         console.log(data[0].home_team)
     }
     searchApi = () => {
-
-        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        // const data = '2020-03-08'
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const key = '3565acccc37b8d4e713b04a23057ba44'
-        let url = "https://api.the-odds-api.com/v3/odds?sport=basketball_nba&region=us&apiKey=" + key;
+        let url = proxyurl + "https://api.the-odds-api.com/v3/odds?apiKey=" + key + "&sport=soccer_epl&region=uk";
         axios
             .get(url)
             .then(res => {
@@ -38,20 +38,21 @@ class NBA extends Component {
             .catch(err => console.log(err));
     };
 
-
+   
 
     render() {
         return (
             <div>
+
                 <Row>
                     <Col size='md-12'>
-                        <h2>NBA GAMES</h2>
                         <div>
                             {/* <input id='scoreQ' className='form-control form-control-lg' autoComplete='off' type='text' name='query' onChange={this.handleInput} /> */}
                             <div id='submit'>
                                 <div className='col'>
+
                                     <button type='submit' className='btn btn-danger' onClick={this.searchApi}>
-                                        Search For Games
+                                        Search For Scores
                                     </button>
                                     <button type='submit' className='btn btn-danger' onClick={() => { this.postToDB(this.props) }
                                     }>
@@ -96,4 +97,4 @@ class NBA extends Component {
 }
 
 
-export default NBA
+export default EPL

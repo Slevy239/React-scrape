@@ -10,7 +10,7 @@ import AddBtn from '../components/AddBtn';
 
 
 
-class Home extends Component {
+class MLB extends Component {
     state = {
         searchRes: [],
         query: "",
@@ -24,10 +24,10 @@ class Home extends Component {
         console.log(data[0].home_team)
     }
     searchApi = () => {
-        // const data = '2020-03-08'
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const key = '3565acccc37b8d4e713b04a23057ba44'
-        let url = proxyurl + "https://api.the-odds-api.com/v3/odds?apiKey=" + key + "&sport=soccer_epl&region=uk";
+        let url = "https://api.the-odds-api.com/v3/odds?sport=baseball_mlb&region=us&apiKey=" + key;
         axios
             .get(url)
             .then(res => {
@@ -38,22 +38,21 @@ class Home extends Component {
             .catch(err => console.log(err));
     };
 
-   
+
 
     render() {
         return (
             <div>
-                <Jumbo />
 
                 <Row>
                     <Col size='md-12'>
                         <div>
-                            <input id='scoreQ' className='form-control form-control-lg' autoComplete='off' type='text' name='query' onChange={this.handleInput} />
+                            {/* <input id='scoreQ' className='form-control form-control-lg' autoComplete='off' type='text' name='query' onChange={this.handleInput} /> */}
                             <div id='submit'>
                                 <div className='col'>
-
+                                    <h2>MLB odds</h2>
                                     <button type='submit' className='btn btn-danger' onClick={this.searchApi}>
-                                        Search For Scores
+                                        Search For Games
                                     </button>
                                     <button type='submit' className='btn btn-danger' onClick={() => { this.postToDB(this.props) }
                                     }>
@@ -98,4 +97,4 @@ class Home extends Component {
 }
 
 
-export default Home
+export default MLB
