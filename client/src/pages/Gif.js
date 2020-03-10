@@ -9,59 +9,46 @@ import { List, ListItem } from "../components/List";
 import Image from 'react-bootstrap/Image'
 
 class Gif extends Component {
-    state = {
-        searchRes: [],
-        query: "",
-        results: []
+    constructor(props) {
+        super(props)
+        this.state = {
+            gifs: { data: [] }
+        };
     }
 
     componentDidMount() {
-        this.searchApi();
-    }
-
-    displayRes = data => {
-        this.setState({ results: data })
-        // console.log(data)
-    }
-    searchApi = () => {
-        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const key = 'tfZU03Q2B2QpE3Wn8OdWajo0JImv7arL';
-        let url = 'https://api.giphy.com/v1/gifs/trending?api_key=' + key
-        axios
-            .get(url)
-            .then(res => {
-                // console.log(res.data.data[0].url);
-                this.displayRes(res.data.data)
+        fetch(`http://api.giphy.com/v1/gifs/trending?&api_key=tfZU03Q2B2QpE3Wn8OdWajo0JImv7arL&limit=10`)
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then((result) => {
+                this.setState({
+                    gifs: result,
+                });
             })
-            .catch(err => console.log(err));
     }
     render() {
-        console.log(this.state.results[1])
+        // console.log(this.state.results[1])
         return (
             <div>
                 <Row>
                     <Col size='md-12'>
                         <div id='gifs'>
-                            {(this.state.results && this.state.results.length > 0) ?
-                                <List>
-                                    {this.state.results.map(result => {
-                                        return (
-                                            <div id='item' key={result.id} className={result.key}>
-                                                <Card variant='outlined'>
-                                                    <CardContent>
-                                                        <div>
-                                                            <img src={this.state.results.source}/>
-                                                            {/* <Image src={this.state.results[1].url} /> */}
-                                                        </div>
-                                                    </CardContent>
-                                                </Card>
-                                            </div>
-                                        )
-                                    })}
-                                </List>
-                                :
-                                <EmptyList />
-                            }
+                            <List>
+                                {this.state.gifs.data.map(item => {
+                                    return (
+                                        <div id='item' key={item.id} className={item.key}>
+                                            <Card variant='outlined'>
+                                                <CardContent>
+                                                    <div>
+                                                        <img src={item.images.original.url} />
+                                                        {/* <Image src={this.state.results[1].url} /> */}
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        </div>
+                                    )
+                                })}
+                            </List>
                         </div>
                     </Col>
                 </Row>
