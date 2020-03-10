@@ -50,8 +50,8 @@ class Gif extends Component {
                                                 <Card variant='outlined'>
                                                     <CardContent>
                                                         <div>
-                                                            {/* <img src={this.state.results.url}></img> */}
-                                                            <Image src={this.state.results[1].bitly_url}></Image>
+                                                            <img src={this.state.results[1].url}/>
+                                                            {/* <Image src={this.state.results[1].url} /> */}
                                                         </div>
                                                     </CardContent>
                                                 </Card>
