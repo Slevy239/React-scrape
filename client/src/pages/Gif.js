@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import EmptyList from '../components/EmptyList';
 import { List, ListItem } from "../components/List";
 import Image from 'react-bootstrap/Image'
+import TextField from '../components/TextField/TextField'
+
 
 class Gif extends Component {
     constructor(props) {
@@ -31,6 +33,7 @@ class Gif extends Component {
         return (
             <div>
                 <Row>
+                    <TextField />
                     <Col size='md-12'>
                         <div id='gifs'>
                             <List>
