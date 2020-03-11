@@ -17,6 +17,7 @@ export function List({ children }) {
 // RecipeListItem renders a bootstrap list item containing data from the recipe api call
 export class ListItem extends React.Component {
   render() {
+
     return (
       <li>
         <Container className='card-container'>
@@ -27,8 +28,13 @@ export class ListItem extends React.Component {
               <Typography>{this.props.teams.join(' vs. ')}</Typography>
               <Typography className='card-title'><strong>Start Time:</strong> <Moment fromat='YYYY/MM/DD' unix>{this.props.commence_time}</Moment></Typography>
               <Typography className='card-body'><strong>Home Team:</strong> {this.props.home_team}</Typography>
-              <Typography className='card-body'> <strong>{this.props.sites[0].site_nice}</strong> <span> Away Team Odds: {Math.round((-100) / (this.props.sites[0].odds.h2h[1] - 1))}</span></Typography>
-              {/* <AddBtn /> */}
+              <Typography className='card-body'> <strong>{this.props.sites[0].site_nice}</strong> <span>{this.props.teams[1]}: 
+              {(this.props.sites[0].odds.h2h[1] > 2.00) ?
+                Math.round(((this.props.sites[0].odds.h2h[1]) - 1) * 100)
+                :
+                Math.round((-100) / ((this.props.sites[0].odds.h2h[1]) - 1))
+              }</span></Typography>
+              
             </CardContent>
           </Card>
         </Container>

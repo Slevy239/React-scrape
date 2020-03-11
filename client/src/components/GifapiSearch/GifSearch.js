@@ -32,7 +32,7 @@ class GifApiSearch extends Component {
                     autoComplete='off'
                     onChange={this.handleChange.bind(this)}
                     onKeyUp={this.handleKeyUp.bind(this)}
-                    label="Search GIF"
+                    label="Search"
                     value={this.state.value}
                 />
             </div>
