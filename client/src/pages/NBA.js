@@ -73,12 +73,12 @@ class NBA extends Component {
                                                 // matchTime={result.matchTime}
                                                 />
 
-                                                <AddBtn
+                                                {/* <AddBtn
                                                     teams={result.teams}
                                                     home_team={result.home_team}
                                                     commence_time={result.commence_time}
                                                     sites={result.sites}
-                                                />
+                                                /> */}
                                             </div>
                                         )
                                     })}

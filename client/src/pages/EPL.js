@@ -80,12 +80,12 @@ class EPL extends Component {
                                                 >
                                                 </ListItem>
 
-                                                <AddBtn
+                                                {/* <AddBtn
                                                     teams={result.teams}
                                                     home_team={result.home_team}
                                                     commence_time={result.commence_time}
                                                     sites={result.sites}
-                                                />
+                                                /> */}
 
                                             </div>
                                         )
