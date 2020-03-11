@@ -25,16 +25,16 @@ export class ListItem extends React.Component {
             <CardContent>
 
               {/* <h3 className='card-title'>{this.props.homeName} vs. {this.props.awayName}</h3> */}
-              <Typography>{this.props.teams.join(' vs. ')}</Typography>
+              <Typography><strong>{this.props.teams.join(' vs. ')}</strong></Typography>
               <Typography className='card-title'><strong>Start Time:</strong> <Moment fromat='YYYY/MM/DD' unix>{this.props.commence_time}</Moment></Typography>
               <Typography className='card-body'><strong>Home Team:</strong> {this.props.home_team}</Typography>
-              <Typography className='card-body'> <strong>{this.props.sites[0].site_nice}</strong> <span>{this.props.teams[1]}: 
+              <Typography className='card-body'> <strong>{this.props.sites[0].site_nice}</strong> <span>{this.props.teams[1]}:
               {(this.props.sites[0].odds.h2h[1] > 2.00) ?
-                Math.round(((this.props.sites[0].odds.h2h[1]) - 1) * 100)
-                :
-                Math.round((-100) / ((this.props.sites[0].odds.h2h[1]) - 1))
-              }</span></Typography>
-              
+                  Math.round(((this.props.sites[0].odds.h2h[1]) - 1) * 100)
+                  :
+                  Math.round((-100) / ((this.props.sites[0].odds.h2h[1]) - 1))
+                }</span></Typography>
+
             </CardContent>
           </Card>
         </Container>
