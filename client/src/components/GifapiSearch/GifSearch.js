@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
 
 class GifApiSearch extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = { value: '' };
     }
 
     handleChange(event) {
@@ -11,7 +12,7 @@ class GifApiSearch extends Component {
         this.setState({
             value: searchText
         });
-        if(searchText.length > 2) {
+        if (searchText.length > 2) {
             this.props.onSearch(searchText)
         }
     }
@@ -25,12 +26,15 @@ class GifApiSearch extends Component {
     render() {
         return (
             <div className="search">
-                 <input type="text"
-                     onChange ={this.handleChange.bind(this)}
-                     onKeyUp = {this.handleKeyUp.bind(this)}
-                     placeholder="Search GIF"
-                     value={this.state.value}
-                  />
+                <TextField type="text"
+                    variant='outlined'
+                    id='outlined-basic'
+                    autoComplete='off'
+                    onChange={this.handleChange.bind(this)}
+                    onKeyUp={this.handleKeyUp.bind(this)}
+                    label="Search GIF"
+                    value={this.state.value}
+                />
             </div>
         );
     }

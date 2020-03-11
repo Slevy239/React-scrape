@@ -6,7 +6,7 @@ import { List, ListItem } from "../components/List";
 import TextField from '@material-ui/core/TextField';
 // import Search from '../components/Search';
 import GifapiSearch from '../components/GifapiSearch/GifSearch';
-// import Trending from '../components/Trending';
+import Trending from '../components/Trending/Trending';
 import Loader from '../components/Gifsearch/loader'
 
 
@@ -57,7 +57,7 @@ class Gif extends Component {
                     loader={this.state.loader}
                     data={this.state.gif}
                 />
-                {/* <Trending /> */}
+                <Trending />
             </div>
         );
     }

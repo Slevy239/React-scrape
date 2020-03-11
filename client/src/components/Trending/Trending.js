@@ -1,30 +1,36 @@
 import React, { Component } from 'react';
-import { API_GIPHY } from './App'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent'
 
 class Trending extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            gifs : {data:[]}
+            gifs: { data: [] }
         };
     }
 
     componentDidMount() {
-        fetch(`http://api.giphy.com/v1/gifs/trending?&api_key=${API_GIPHY}&limit=4`)
+        fetch(`http://api.giphy.com/v1/gifs/trending?&api_key=aUhPqNQX1V9W5wSNJ9J0FOaQdvwgHH7O&limit=5`)
             .then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then((result) => {
                 this.setState({
                     gifs: result,
-                    });
-                })
+                });
+            })
     }
 
     render() {
+        console.log(this.state.gifs)
         const listItems = this.state.gifs.data.map((item) =>
-            <a href={item.url} target="new" key={item.id}>
-                <img src={item.images.original.url} />
-            </a>
+            <Card variant='outlined'>
+                <CardContent>
+                    <a href={item.url} target="new" key={item.id}>
+                        <img src={item.images.original.url} />
+                    </a>
+                </CardContent>
+            </Card>
         );
         return (
             <div className="pakageTrending">
