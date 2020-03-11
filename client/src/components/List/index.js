@@ -24,7 +24,6 @@ export class ListItem extends React.Component {
           <Card id={this.props.id} variant='outlined'>
             <CardContent>
 
-              {/* <h3 className='card-title'>{this.props.homeName} vs. {this.props.awayName}</h3> */}
               <Typography><strong>{this.props.teams.join(' vs. ')}</strong></Typography>
               <Typography className='card-title'><strong>Start Time:</strong> <Moment fromat='YYYY/MM/DD' unix>{this.props.commence_time}</Moment></Typography>
               <Typography className='card-body'><strong>Home Team:</strong> {this.props.home_team}</Typography>
