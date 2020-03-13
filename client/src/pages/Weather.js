@@ -13,9 +13,9 @@ class Weather extends Component {
         results: []
     }
 
-    componentDidMount() {
-        this.searchAPI();
-    }
+    // componentDidMount() {
+    //     this.searchAPI();
+    // }
     displayRes = data => {
         this.setState({ results: data })
     }
@@ -35,13 +35,8 @@ class Weather extends Component {
             <div>
                 <Row>
                     <Grid>
-                    {this.state.results.map(result => {
-                            return (
-                                <div id='weather' key={result.id}>
-                                    <Typography>{result.coord}</Typography>
-                                </div>
-                            )
-                        })}
+                        <button onClick={this.searchAPI}>Search</button>
+                        <div>{this.state.results}</div>
                     </Grid>
                 </Row>
 
