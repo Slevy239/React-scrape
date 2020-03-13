@@ -46,3 +46,11 @@ ul.list-group {
   padding-bottom: 3.5%;
   padding-top: 2.5%;
 }
+
+body, .makeStyles-root-1 {
+  background: url(https://www.everynation.org/wp-content/uploads/2018/02/Monthly-Website-Header-background.jpg);
+}
+
+.container {
+  padding: 15px;
+}

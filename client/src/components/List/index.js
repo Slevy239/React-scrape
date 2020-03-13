@@ -10,7 +10,9 @@ import Moment from 'react-moment';
 // BookList renders a bootstrap list item
 export function List({ children }) {
   return (
+
     <ul className="list-group" >{children}</ul>
+
   );
 }
 
@@ -20,7 +22,7 @@ export class ListItem extends React.Component {
 
     return (
       <li>
-        <Container className='card-container'>
+        <Container className='card-container col-6'>
           <Card id={this.props.id} variant='outlined'>
             <CardContent>
 
