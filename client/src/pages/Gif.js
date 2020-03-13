@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import { Row, Col } from '../components/Grid'
-import Card from '@material-ui/core/Card'
+// import Card from '@material-ui/core/Card'
 // import CardContent from '@material-ui/core/CardContent';
-import { List, ListItem } from "../components/List";
-import TextField from '@material-ui/core/TextField';
+// import { List, ListItem } from "../components/List";
+// import TextField from '@material-ui/core/TextField';
 // import Search from '../components/Search';
 import GifapiSearch from '../components/GifapiSearch/GifSearch';
 import Trending from '../components/Trending/Trending';

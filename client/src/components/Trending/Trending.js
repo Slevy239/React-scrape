@@ -27,7 +27,7 @@ class Trending extends Component {
             <Card variant='outlined'>
                 <CardContent>
                     <a href={item.url} target="new" key={item.id}>
-                        <img src={item.images.original.url} />
+                        <img src={item.images.original.url} alt='gif' />
                     </a>
                 </CardContent>
             </Card>

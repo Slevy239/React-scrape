@@ -14,7 +14,7 @@ class loader extends Component {
             <div className="gif">
                 <h3>{this.props.data.title}</h3>
                 <a href={this.props.data.gifUrl} target="new">
-                    <img src={this.handleLoader()}/>
+                    <img src={this.handleLoader()} alt='gif'/>
                 </a>
             </div>
         );
