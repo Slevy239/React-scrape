@@ -77,7 +77,7 @@ class EPL extends Component {
                                         Search For Games
                                     </Button>                                </div>
                             </div>
-                            <Grid spacing={3}>
+                            <Grid >
                                 {(this.state.results && this.state.results.length > 0) ?
                                     <List id='results'>
                                         {this.state.results.map(result => {

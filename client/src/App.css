@@ -54,3 +54,7 @@ body, .makeStyles-root-1 {
 .container {
   padding: 15px;
 }
+input#outlined-basic {
+  background: white;
+  border-radius: 15px;
+}

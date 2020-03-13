@@ -10,7 +10,7 @@ import EPL from '../../pages/EPL'
 import NBA from '../../pages/NBA'
 import MLB from '../../pages/MLB'
 import Gif from '../../pages/Gif'
-
+import Weather from '../../pages/Weather'
 
 
 function TabPanel(props) {
@@ -65,7 +65,8 @@ export default function SimpleTabs() {
                     <Tab label="EPL" {...a11yProps(0)} />
                     <Tab label="NBA" {...a11yProps(1)} />
                     <Tab label="MLB" {...a11yProps(2)} />
-                    {/* <Tab label="Gif Search" {...a11yProps(3)} /> */}
+                    <Tab label="Gif Search" {...a11yProps(3)} />
+                    <Tab label='Weather' {...a11yProps(4)} />
 
                 </Tabs>
             </AppBar>
@@ -78,9 +79,12 @@ export default function SimpleTabs() {
             <TabPanel value={value} index={2}>
                 <MLB />
             </TabPanel>
-            {/* <TabPanel value={value} index={3}>
+            <TabPanel value={value} index={3}>
                 <Gif />
-            </TabPanel> */}
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+                <Weather />
+            </TabPanel>
         </div>
     );
 }
