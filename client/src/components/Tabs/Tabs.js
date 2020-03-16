@@ -11,7 +11,7 @@ import NBA from '../../pages/NBA'
 import MLB from '../../pages/MLB'
 import Gif from '../../pages/Gif'
 import Weather from '../../pages/Weather'
-
+import Virus from '../../pages/COVIDdata'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

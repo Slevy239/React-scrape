@@ -58,3 +58,8 @@ input#outlined-basic {
   background: white;
   border-radius: 15px;
 }
+.card {
+  background-color: white;
+  border: solid 1px;
+  border-radius: 15px;
+}

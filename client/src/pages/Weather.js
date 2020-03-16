@@ -4,8 +4,7 @@ import { Row } from '../components/Grid'
 import Grid from '@material-ui/core/Grid'
 // import Typography from '@material-ui/core/Typography'
 // import EmptyList from '../components/EmptyList';
-
-
+// import China from '../utils/data';
 
 
 class Weather extends Component {
@@ -13,9 +12,9 @@ class Weather extends Component {
         results: []
     }
 
-    // componentDidMount() {
-    //     this.searchAPI();
-    // }
+    componentDidMount() {
+        this.searchAPI();
+    }
     displayRes = data => {
         this.setState({ results: data })
     }
@@ -30,13 +29,15 @@ class Weather extends Component {
             .catch(err => console.log(err))
     }
     render() {
-        console.log(this.state.results)
+        console.log(this.state.results.visibility)
+        // console.log(China)
         return (
             <div>
                 <Row>
                     <Grid>
-                        <button onClick={this.searchAPI}>Search</button>
+                        {/* <button onClick={this.searchAPI}>Search</button> */}
                         <div>{this.state.results.name}</div>
+                        <div>{this.state.results.visibility}</div>
 
                     </Grid>
                 </Row>
