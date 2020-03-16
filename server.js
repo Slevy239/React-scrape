@@ -1,7 +1,7 @@
 //Techonology needed to begin and start app
 const express = require("express");
 const app = express();
-const routes = require("./routes")
+const routes = require("./routes");
 
 
 // Define middleware here
