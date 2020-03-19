@@ -14,20 +14,10 @@ class Weather extends Component {
         initialized: true
     }
 
-    // componentDidMount() {
-    //     this.searchAPI();
-    //     // this.getDb();
-    // }
+    
     displayRes = data => {
         this.setState({ results: data.items })
     }
-    // getDb = () => {
-    //     axios.get("/api/results")
-    //         .then(res => {
-    //             this.setState({ db: res.data })
-    //         })
-    //         .catch((err => console.log(err)))
-    // }
     handleInput = event => {
         const { name, value } = event.target
         this.setState({
