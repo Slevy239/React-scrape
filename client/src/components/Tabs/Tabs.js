@@ -10,8 +10,8 @@ import Box from '@material-ui/core/Box';
 // import NBA from '../../pages/NBA'
 // import MLB from '../../pages/MLB'
 // import Gif from '../../pages/Gif'
-import Weather from '../../pages/Weather'
-
+// import Weather from '../../pages/Weather'
+import UFC from '../../pages/UFC'
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -65,7 +65,7 @@ export default function SimpleTabs() {
                     <Tab label="NBA" {...a11yProps(1)} />
                     <Tab label="MLB" {...a11yProps(2)} />
                     <Tab label="Gif Search" {...a11yProps(3)} /> */}
-                    <Tab label='Weather' {...a11yProps(0)} />
+                    <Tab label='UFC' {...a11yProps(0)} />
 
                 </Tabs>
             </AppBar>
@@ -82,7 +82,8 @@ export default function SimpleTabs() {
                 <Gif />
             </TabPanel> */}
             <TabPanel value={value} index={0}>
-                <Weather />
+                {/* <Weather /> */}
+                <UFC />
             </TabPanel>
         </div>
     );

@@ -26,6 +26,7 @@ class Weather extends Component {
 
     }
     searchAPI = () => {
+        console.log('clicked')
         const key = '3872ef922fdc7b4bc5f2921a05246757'
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.search}&appid=` + key
         axios.get(url)
@@ -35,8 +36,8 @@ class Weather extends Component {
             .catch(err => console.log(err))
     }
     render() {
-        console.log(this.state.results.visibility)
-        console.log(this.state.search)
+        // console.log(this.state.results.visibility)
+        // console.log(this.state.search)
         return (
             <div>
                 <Row>
@@ -46,8 +47,8 @@ class Weather extends Component {
                                 name='search'
                                 onChange={this.handleInput}
                             />
-                            <button type="submit" className="btn btn-danger" onClick={this.searchAPI} >
-                                Search for Books
+                            <button type='button' onClick={this.searchAPI} >
+                                Search
                              </button>
                         </form>
                         <div>{this.state.results.name}</div>
