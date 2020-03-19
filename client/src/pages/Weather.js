@@ -19,7 +19,7 @@ class Weather extends Component {
     //     // this.getDb();
     // }
     displayRes = data => {
-        this.setState({ results: data })
+        this.setState({ results: data.items })
     }
     // getDb = () => {
     //     axios.get("/api/results")

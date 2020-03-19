@@ -6,12 +6,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import EPL from '../../pages/EPL'
-import NBA from '../../pages/NBA'
-import MLB from '../../pages/MLB'
-import Gif from '../../pages/Gif'
+// import EPL from '../../pages/EPL'
+// import NBA from '../../pages/NBA'
+// import MLB from '../../pages/MLB'
+// import Gif from '../../pages/Gif'
 import Weather from '../../pages/Weather'
-import Virus from '../../pages/COVIDdata'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
