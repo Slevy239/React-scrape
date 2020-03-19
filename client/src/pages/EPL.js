@@ -8,6 +8,7 @@ import { Row } from "../components/Grid";
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography'
+import API from '../utils/API'
 
 class EPL extends Component {
     state = {
@@ -18,7 +19,12 @@ class EPL extends Component {
     }
 
     componentDidMount() {
-        this.getResults();
+        // this.getResults();
+      API.getResults().then(data =>{
+          console.log(data);
+          this.setState({ results: data.response})
+          console.log(this.state.results)
+      })
     }
     getResults = () => {
         axios.get('/api/results')

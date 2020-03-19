@@ -62,15 +62,15 @@ export default function SimpleTabs() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                    <Tab label="EPL" {...a11yProps(0)} />
+                    {/* <Tab label="EPL" {...a11yProps(0)} />
                     <Tab label="NBA" {...a11yProps(1)} />
                     <Tab label="MLB" {...a11yProps(2)} />
-                    <Tab label="Gif Search" {...a11yProps(3)} />
-                    <Tab label='Weather' {...a11yProps(4)} />
+                    <Tab label="Gif Search" {...a11yProps(3)} /> */}
+                    <Tab label='Weather' {...a11yProps(0)} />
 
                 </Tabs>
             </AppBar>
-            <TabPanel value={value} index={0}>
+            {/* <TabPanel value={value} index={0}>
                 <EPL />
             </TabPanel>
             <TabPanel value={value} index={1}>
@@ -81,8 +81,8 @@ export default function SimpleTabs() {
             </TabPanel>
             <TabPanel value={value} index={3}>
                 <Gif />
-            </TabPanel>
-            <TabPanel value={value} index={4}>
+            </TabPanel> */}
+            <TabPanel value={value} index={0}>
                 <Weather />
             </TabPanel>
         </div>

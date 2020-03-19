@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
+const DataSchema = new Schema({
     sport_key: { required: false },
     teams: { required: true, type: Array },
     home_team: { required: false, type: String },
     sites: { required: true, type: Array }
 });
 
-const Data = mongoose.model("Data", bookSchema);
+// const Data = mongoose.model("Data", DataSchema);
 
-module.exports = Data;
+module.exports = mongoose.model("Data", DataSchema);
