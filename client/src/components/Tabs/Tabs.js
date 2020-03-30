@@ -12,6 +12,7 @@ import Box from '@material-ui/core/Box';
 // import Gif from '../../pages/Gif'
 // import Weather from '../../pages/Weather'
 import UFC from '../../pages/UFC'
+import Heavy from '../../pages/Heavy'
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -61,30 +62,19 @@ export default function SimpleTabs() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                    {/* <Tab label="EPL" {...a11yProps(0)} />
-                    <Tab label="NBA" {...a11yProps(1)} />
-                    <Tab label="MLB" {...a11yProps(2)} />
-                    <Tab label="Gif Search" {...a11yProps(3)} /> */}
-                    <Tab label='UFC' {...a11yProps(0)} />
+                    <Tab label='Pound for Pound' {...a11yProps(0)} />
+                    <Tab label='Heavy Weight' {...a11yProps(1)} />
+
 
                 </Tabs>
             </AppBar>
-            {/* <TabPanel value={value} index={0}>
-                <EPL />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                <NBA />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                <MLB />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                <Gif />
-            </TabPanel> */}
             <TabPanel value={value} index={0}>
-                {/* <Weather /> */}
                 <UFC />
             </TabPanel>
+            <TabPanel value={value} index={1}>
+                <Heavy />
+            </TabPanel>
+
         </div>
     );
 }

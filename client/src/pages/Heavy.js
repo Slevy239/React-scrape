@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card'
 import '../css/UFC.css'
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-class UFC extends Component {
+
+class Heavy extends Component {
     state = {
         results: []
     }
@@ -22,7 +22,7 @@ class UFC extends Component {
         const url = proxyurl + 'https://api.sportradar.us/ufc/trial/v2/en/rankings.json?api_key=vu2y48dqrqwckk3jp2gu5pes'
         axios.get(url)
             .then(res => {
-                this.displayRes(res.data.rankings[0].competitor_rankings)
+                this.displayRes(res.data.rankings[8].competitor_rankings)
             })
             .catch(err => console.log(err))
     }
@@ -33,7 +33,7 @@ class UFC extends Component {
             <div>
                 <Paper elevation={10}>
                     <Typography variant="h3" component='h3'>
-                        Pound for Pound Rankings
+                        Heavy Weight Rankings
                 </Typography>
                 </Paper>
 
@@ -64,16 +64,7 @@ class UFC extends Component {
                 } */}
             </div>
         )
-    }
 }
-export default UFC
+}
 
-
-
-
-
-
-
-
-
-// const url = 'https://api.sportradar.us/ufc/trial/v2/en/rankings.json?api_key=vu2y48dqrqwckk3jp2gu5pes'
+export default Heavy
