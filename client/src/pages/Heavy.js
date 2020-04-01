@@ -46,9 +46,11 @@ class Heavy extends Component {
                     return (
                         <div id='item' key={result.id} className={result.key}>
                             <Card>
-                                <Typography variant='h7' component='h3'>
-                                    {result.rank}.{result.competitor.name}
-                                </Typography>
+                                <a href={`https://www.google.com/search?q=${result.competitor.name}`}>
+                                    <Typography variant='h7' component='h3'>
+                                        {result.rank}.{result.competitor.name}
+                                    </Typography>
+                                </a>
                             </Card>
 
                         </div>
@@ -64,7 +66,7 @@ class Heavy extends Component {
                 } */}
             </div>
         )
-}
+    }
 }
 
 export default Heavy
