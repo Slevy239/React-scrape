@@ -4,12 +4,17 @@ import Card from '@material-ui/core/Card'
 import '../css/UFC.css'
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from '@material-ui/core/Link'
 
 class Heavy extends Component {
     state = {
         results: []
     }
-
+    handleClick = (event) => {
+        event.preventDefault();
+        console.info("You cliked a breadcrumb.")
+    }
     displayRes = data => {
         this.setState({ results: data })
     }
@@ -31,6 +36,16 @@ class Heavy extends Component {
         console.log(this.state.results)
         return (
             <div>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link color="inherit" href="/" onClick={this.handleClick}>
+                        Material-UI
+                    </Link>
+                    <Link color="inherit" href="/getting-started/installation/" onClick={this.handleClick}>
+                        Core
+                    </Link>
+                    <Typography color="textPrimary">Heavy Weight Rankings</Typography>
+                </Breadcrumbs>
+                <br></br>
                 <Paper elevation={10}>
                     <Typography variant="h3" component='h3'>
                         Heavy Weight Rankings
