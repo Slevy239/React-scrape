@@ -7,6 +7,7 @@ import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
+import Drawer from '../components/Drawer/Drawer'
 
 class UFC extends Component {
     state = {
@@ -37,7 +38,8 @@ class UFC extends Component {
         console.log(this.state.results)
         return (
             <div>
-                       <Breadcrumbs aria-label="breadcrumb">
+                {/* <Drawer /> */}
+                <Breadcrumbs aria-label="breadcrumb">
                     <Link color="inherit" href="/" onClick={this.handleClick}>
                         SportsBook
                     </Link>
@@ -49,7 +51,7 @@ class UFC extends Component {
                 <br></br>
                 <Paper elevation={10}>
                     <Typography variant="h3" component='h3'>
-                        Pound for Pound 
+                        Pound for Pound
                 </Typography>
                 </Paper>
 
