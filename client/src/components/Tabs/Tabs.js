@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+import Light from '../../pages/Light'
 import UFC from '../../pages/UFC'
 import Heavy from '../../pages/Heavy'
 function TabPanel(props) {
@@ -60,6 +61,8 @@ export default function SimpleTabs() {
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                     <Tab label='Pound for Pound' {...a11yProps(0)} />
                     <Tab label='Heavy Weight' {...a11yProps(1)} />
+                    <Tab label='Light Weight' {...a11yProps(2)} />
+
 
 
                 </Tabs>
@@ -69,6 +72,9 @@ export default function SimpleTabs() {
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <Heavy />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+                <Light />
             </TabPanel>
 
         </div>

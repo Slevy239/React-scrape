@@ -39,17 +39,17 @@ class UFC extends Component {
             <div>
                        <Breadcrumbs aria-label="breadcrumb">
                     <Link color="inherit" href="/" onClick={this.handleClick}>
-                        Material-UI
+                        SportsBook
                     </Link>
-                    <Link color="inherit" href="/getting-started/installation/" onClick={this.handleClick}>
-                        Core
+                    <Link color="inherit" href="/" onClick={this.handleClick}>
+                        Rankings
                     </Link>
-                    <Typography color="textPrimary">Pound for Pound Rankings</Typography>
+                    <Typography color="textPrimary">Pound for Pound</Typography>
                 </Breadcrumbs>
                 <br></br>
                 <Paper elevation={10}>
                     <Typography variant="h3" component='h3'>
-                        Pound for Pound Rankings
+                        Pound for Pound 
                 </Typography>
                 </Paper>
 

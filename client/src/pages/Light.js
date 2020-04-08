@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link'
 
-class Heavy extends Component {
+class Light extends Component {
     state = {
         results: []
     }
@@ -27,7 +27,7 @@ class Heavy extends Component {
         const url = proxyurl + 'https://api.sportradar.us/ufc/trial/v2/en/rankings.json?api_key=vu2y48dqrqwckk3jp2gu5pes'
         axios.get(url)
             .then(res => {
-                this.displayRes(res.data.rankings[8].competitor_rankings)
+                this.displayRes(res.data.rankings[4].competitor_rankings)
             })
             .catch(err => console.log(err))
     }
@@ -43,12 +43,12 @@ class Heavy extends Component {
                     <Link color="inherit" href="/getting-started/installation/" onClick={this.handleClick}>
                         Rankings
                     </Link>
-                    <Typography color="textPrimary">Heavy Weight</Typography>
+                    <Typography color="textPrimary">Light Weight</Typography>
                 </Breadcrumbs>
                 <br></br>
                 <Paper elevation={10}>
                     <Typography variant="h3" component='h3'>
-                        Heavy Weight 
+                        Light Weight 
                 </Typography>
                 </Paper>
 
@@ -84,4 +84,4 @@ class Heavy extends Component {
     }
 }
 
-export default Heavy
+export default Light
