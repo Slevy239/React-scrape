@@ -3,22 +3,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Link } from '@material-ui/core';
 
 const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel',
+  "Men",
+  "Women"
 ];
 
 const ITEM_HEIGHT = 48;
@@ -58,11 +47,22 @@ export default function LongMenu() {
           },
         }}
       >
-        {options.map((option) => (
+        {/* {options.map((option) => (
           <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
             {option}
           </MenuItem>
-        ))}
+        ))} */}
+        <Link >
+          <MenuItem>
+            {options[0]}
+          </MenuItem>
+        </Link>
+
+        <Link >
+          <MenuItem>
+            {options[1]}
+          </MenuItem>
+        </Link>
       </Menu>
     </div>
   );
