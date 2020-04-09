@@ -38,7 +38,6 @@ class UFC extends Component {
         console.log(this.state.results)
         return (
             <div>
-                {/* <Drawer /> */}
                 <Breadcrumbs aria-label="breadcrumb">
                     <Link color="inherit" href="/" onClick={this.handleClick}>
                         SportsBook

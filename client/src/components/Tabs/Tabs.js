@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import Light from '../../pages/Light'
 import UFC from '../../pages/UFC'
 import Heavy from '../../pages/Heavy'
+import Drawer from '../Drawer/Drawer'
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -62,6 +64,8 @@ export default function SimpleTabs() {
                     <Tab label='Pound for Pound' {...a11yProps(0)} />
                     <Tab label='Heavy Weight' {...a11yProps(1)} />
                     <Tab label='Light Weight' {...a11yProps(2)} />
+                <Drawer
+                class="dots" />
 
 
 
