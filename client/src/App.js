@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../src/pages/Home'
 // import Tabs from '../src/components/Tabs'
 import Drawer from './components/Drawer/Drawer'
+import MLB from '../src/pages/MLB'
+import NBA from '../src/pages/NBA'
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
           <Switch>
             {/* <Route exact path="/" component={Home} /> */}
             <Route exact path="/" component={Tabs} />
+            <Route exact path="/male" component={MLB} />
+            <Route exact path="/female" component={NBA} />
+
           </Switch>
         </div>
       </Router>

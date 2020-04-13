@@ -52,13 +52,13 @@ export default function LongMenu() {
             {option}
           </MenuItem>
         ))} */}
-        <Link >
+        <Link to='male'>
           <MenuItem>
             {options[0]}
           </MenuItem>
         </Link>
 
-        <Link >
+        <Link to='/female' >
           <MenuItem>
             {options[1]}
           </MenuItem>
